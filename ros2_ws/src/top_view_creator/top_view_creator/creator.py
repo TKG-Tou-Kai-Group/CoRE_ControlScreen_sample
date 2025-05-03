@@ -152,7 +152,7 @@ class TopViewCreator(Node):
         distance_to_camera2 = np.sqrt((x_grid - camera2_x)**2 + (y_grid - camera2_y)**2)
         
         # Calculate weights
-        diff_distance = distance_to_camera2 - distance_to_camera1
+        diff_distance = distance_to_camera1 - distance_to_camera2
         camera1_weight = 1.0 / (1.0 + np.exp(-width_coefficient * diff_distance))
         camera2_weight = 1.0 - camera1_weight
         
