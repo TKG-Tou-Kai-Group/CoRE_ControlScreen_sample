@@ -1,0 +1,14 @@
+# /etc/udev/rules.d/99-usb-camera.rules
+
+SUBSYSTEM=="video4linux", KERNEL=="video*", \
+  KERNELS=="1-1.2", \
+  ATTR{index}=="0", \
+  SYMLINK+="wide_view_camera_0", GROUP="video", MODE="0660"
+SUBSYSTEM=="video4linux", KERNEL=="video*", \
+  KERNELS=="1-1.1", \
+  ATTR{index}=="0", \
+  SYMLINK+="wide_view_camera_1", GROUP="video", MODE="0660"
+SUBSYSTEM=="video4linux", KERNEL=="video*", \
+  KERNELS=="1-1.3", \
+  ATTR{index}=="0", \
+  SYMLINK+="normal_camera_0", GROUP="video", MODE="0660"

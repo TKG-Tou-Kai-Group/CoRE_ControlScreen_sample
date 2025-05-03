@@ -1,0 +1,6 @@
+[submodule "ros2_ws/src/usb_cam"]
+	path = ros2_ws/src/usb_cam
+	url = https://github.com/ros-drivers/usb_cam.git
+[submodule "ros2_ws/src/vision_opencv"]
+	path = ros2_ws/src/vision_opencv
+	url = https://github.com/ros-perception/vision_opencv.git
