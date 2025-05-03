@@ -1,0 +1,19 @@
+[Unit]
+Description=ROS2 launch
+After=local-fs.target network-online.target
+ConditionPathExists=/home/pi/CoRE_ControlScreen_sample/service
+
+[Service]
+ExecStartPre=/bin/sleep 5
+ExecStart=/home/pi/CoRE_ControlScreen_sample/service/ros2_launch.sh
+ExecStop=/bin/kill ${MAINPID}
+Restart=on-failure
+StartLimitInterval=60
+StartLimitBurst=3
+KillMode=mixed
+Type=simple
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
