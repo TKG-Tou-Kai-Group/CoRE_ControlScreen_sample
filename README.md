@@ -1,6 +1,6 @@
 # CoRE_ControlScreen_sample
 
-このリポジトリは、[ロボット工学選手権（The Championship of Robotics Engineers）](https://core.scramble-robot.org/)（略称：CoRE「コア」）の遠隔操縦ロボット用の操作画面を作るシステムです。
+このリポジトリは、[The Championship of Robotics Engineers](https://core.scramble-robot.org/)（略称：CoRE「コア」）の遠隔操縦ロボット用の操作画面を作るシステムです。
 
 180度の広い視野を持つ魚眼カメラの映像を合成して、まるで真上から見下ろしているような画像（アラウンドビュー）を作ります。これによって、ロボットの操作がしやすくなります。
 
@@ -30,7 +30,7 @@
     | 魚眼カメラ 1      |
     | (ELP-USBFHD04H)   |----USB----+
     +-------------------+           |
-                                　  |
+                                    |
     +-------------------+           v
     | 魚眼カメラ 2      |         +-----------------+          +------------------+
     | (ELP-USBFHD04H)   |----USB-->  Raspberry Pi 4 |--HDMI--->  HDMI送信機       |
