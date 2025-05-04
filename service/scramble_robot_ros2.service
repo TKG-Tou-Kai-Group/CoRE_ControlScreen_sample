@@ -1,19 +1,21 @@
 [Unit]
-Description=ROS2 launch
-After=local-fs.target network-online.target
-ConditionPathExists=/home/pi/CoRE_ControlScreen_sample/service
+Description=ROS2 GUI Launch
+After=graphical.target dbus-user-session.service
+Wants=graphical.target dbus-user-session.service
+DefaultDependencies=no
 
 [Service]
-ExecStartPre=/bin/sleep 5
-ExecStart=/home/pi/CoRE_ControlScreen_sample/service/ros2_launch.sh
-ExecStop=/bin/kill ${MAINPID}
-Restart=on-failure
-StartLimitInterval=60
-StartLimitBurst=3
-KillMode=mixed
 Type=simple
+Environment="DISPLAY=:0"
+Environment="XAUTHORITY=/home/pi/.Xauthority"
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
+# …その他の Environment はそのまま
+ExecStart=/bin/bash -c 'source /opt/ros/humble/setup.bash && /home/pi/CoRE_ControlScreen_sample/service/ros2_launch.sh'
+ExecStop=/bin/kill -s SIGINT ${MAINPID}
+Restart=on-failure
+RestartSec=5
 User=pi
 Group=pi
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target

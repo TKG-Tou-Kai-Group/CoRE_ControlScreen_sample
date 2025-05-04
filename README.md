@@ -166,6 +166,11 @@ sudo systemctl start scramble_robot_ros2.service
 systemctl status scramble_robot_ros2.service
 ```
 
+自動起動でアプリケーションが立ち上がっているときにアプリケーションを停止させるには、キーボードの[Ctrl]+[Alt]+[T]同時押しで端末を立ち上げ、以下のコマンドを実行すればよいです。
+```bash
+sudo systemctl stop scramble_robot_ros2.service
+```
+
 ### 2.4. ロボットに合わせた調整
 自分のロボットのカメラ配置に合わせて、以下のファイルを編集する必要があります：
 `/home/pi/CoRE_ControlScreen_sample/ros2_ws/src/core_robot_launcher/launch/robot_launcher.launch.py`
