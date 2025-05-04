@@ -31,7 +31,7 @@ def generate_launch_description():
               {'video_device': "/dev/wide_view_camera_0"},
               {'pixel_format': 'mjpeg2rgb'},
               {'image_width': 640},
-              {'image_height': 480},
+              {'image_height': 360},
               {'framerate': 30.0}
             ],
         ),
